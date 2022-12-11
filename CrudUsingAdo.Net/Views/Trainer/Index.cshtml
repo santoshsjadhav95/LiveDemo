@@ -1,0 +1,25 @@
+﻿@*@model CrudUsingAdo.Net.Models.Trainer*@
+@model IEnumerable<CrudUsingAdo.Net.Models.Trainer>
+@using CrudUsingAdo.Net.Models
+
+@{
+    ViewBag.Title = "Index";
+
+
+    @Html.ActionLink("Create Trainer", "Create")
+    <h1>List of Trainers</h1>
+
+    foreach (Trainer t in Model)
+    {
+        <li>
+            @Html.ActionLink(t.Name, "GetStudentByTrainerId", new { TrainerId = t.TrainerId, trainername = t.Name})|
+            @Html.ActionLink("Details", "Details", new { tainerId = t.TrainerId }) |
+            @Html.ActionLink("Edit", "Edit", new { tainerId = t.TrainerId }) |
+            @Html.ActionLink("Delete", "Delete", new { tainerId = t.TrainerId })
+        </li>
+    }
+
+}
+
+<h2>Index</h2>
+

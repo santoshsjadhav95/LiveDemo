@@ -1,0 +1,69 @@
+﻿@model CrudUsingAdo.Net.Models.Student
+@using CrudUsingAdo.Net.Models
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+
+<html>
+<head>
+    
+</head>
+<body>
+    <h1>Student Details</h1>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.RollNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.RollNumber)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Name)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Gender)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Gender)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Trainer.TrainerId)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Trainer.TrainerId)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DisplayNameFor(model => model.Trainer.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Trainer.Name)
+                </td>
+            </tr>
+        </table>
+    </div>
+    @*@Html.ActionLink("Back", "GetStudentByTrainerId", "Trainer", 
+    new{TrainerId = Model.Trainer.TrainerId,
+    trainername = Model.Trainer.Name
+    }, null)*@
+
+
+</body>
+</html>
+

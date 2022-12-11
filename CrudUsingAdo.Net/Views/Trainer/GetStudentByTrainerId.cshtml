@@ -1,0 +1,53 @@
+﻿@model IEnumerable<CrudUsingAdo.Net.Models.Student>
+@using CrudUsingAdo.Net.Models
+@{
+    ViewBag.Title = "GetStudentByTrainerId";
+}
+
+<h2>GetStudentByTrainerId</h2>
+<h1>All student for @ViewBag.trainername</h1>
+
+<table border="1">
+    @if (Model != null && Model.Count() > 0)
+    {
+        
+         <tr>
+            <th>RollNumner</th>
+            <th>Name</th>
+        </tr>
+       
+        foreach (Student s in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink(s.RollNumber.ToString(), "Details","Student",new { rollnumber = s.RollNumber },null)
+                </td>
+                <td>
+                    @s.Name
+                </td>
+            </tr>
+            @*<li>
+                <span>@student.RollNumber : @student.Name : @student.Gender: @student.TrainerId</span>
+
+            </li>*@
+        }
+    }
+    else
+    {
+        <tr>
+            <td>
+                No trainer
+            </td>
+        </tr>
+        @*<li>
+            <span>No Trainer under this Trainer</span>
+        </li>*@
+
+    }
+
+
+
+
+</table>
+
+@Html.ActionLink("Back", "Index")
